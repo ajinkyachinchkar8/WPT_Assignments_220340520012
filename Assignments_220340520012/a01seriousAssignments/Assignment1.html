@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let arr = [2, 8, 6, 9, 12, 34, 7, 13, 45, 19];
+
+      window.addEventListener("DOMContentLoaded", () => {
+        let text = document.querySelector("#a1");
+        text.addEventListener("blur", () => {
+          console.log("blur event occur");
+
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == text.value) {
+              console.log("inside if");
+              document.querySelector("#s1").innerHTML = "element is present";
+
+              document.querySelector("#b2").disabled = false;
+              document.querySelector("#b3").disabled = false;
+              document.querySelector("#b1").disabled = true;
+              document.querySelector("#b4").disabled = true;
+              document.querySelector("#b5").disabled = true;
+              break;
+            } else {
+              console.log(arr[i]);
+              document.querySelector("#s1").innerHTML =
+                "element is not present";
+              document.querySelector("#b1").disabled = false;
+            }
+          }
+        });
+
+        let addbutton = document.querySelector("#b1");
+        addbutton.addEventListener("click", () => {
+          console.log("add button click");
+
+          arr.push = parseInt(document.querySelector("#a1").value);
+          console.log(arr, "element is added in array");
+          document.querySelector("#s1").innerHTML = "element added in array";
+        });
+
+        const edit = document.querySelector("#b2");
+        edit.addEventListener("click", () => {
+          console.log("Edit button clicked");
+          let x = window.prompt("Enter a new value");
+          console.log(x);
+        });
+
+        const remove = document.querySelector("#b3");
+        remove.addEventListener("click", () => {
+          console.log("delete button clicked");
+          let i = 0;
+          //text=parseInt(text);
+          console.log(text.value);
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == text.value) {
+              arr.splice(i, 1);
+            }
+          }
+          console.log(arr);
+
+          document.querySelector("#s1").innerHTML =
+            "element removed from array";
+        });
+
+        const see = document.querySelector("#b4");
+        see.addEventListener("click", () => {
+          console.log("Viewall button clicked");
+
+          document.querySelector("#s1").innerHTML = arr;
+        });
+
+        const odd = document.querySelector("#b5");
+        odd.addEventListener("click", () => {
+          console.log("showoddd position button clicked");
+          let z = "";
+          for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+              console.log("even place");
+            } else {
+              z = z + " " + arr[i];
+            }
+          }
+          document.querySelector("#s1").innerHTML = " " + z;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" id="a1" placeholder="Enter number" />
+    <span id="s1">Message</span> <br /><br />
+    <button id="b1" disabled>Add</button>
+    <button id="b2" disabled>Edit</button>
+    <button id="b3" disabled>Delete</button>
+    <button id="b4">Viewall</button>
+    <button id="b5">Showodd positions</button>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      
+
+      window.addEventListener("DOMContentLoaded", () => {
+
+        const emp=[
+                    {
+                        empNo:1,
+                        empName:'Abc',
+                        email:'abc@company.com',
+                        deptId:'01',
+
+                    },{
+                        empNo:2,                                              
+                        empName:'Def',
+                        email:'def@company.com',
+                        deptId:'02',
+                    },{
+                        empNo:3,
+                        empName:'Pqr',
+                        email:'pqr@company.com',
+                        deptId:'01',
+                    },{
+                        empNo:4,
+                        empName:'Xyz',
+                        email:'xyz@company.com',
+                        deptId:'02',
+                    }
+                ];
+
+
+
+
+        let text = document.querySelector("#a1");
+        text.addEventListener("blur", () => {
+          console.log("blur event occur");
+
+          
+        });
+
+        let addbutton = document.querySelector("#b1");
+        addbutton.addEventListener("click", () => {
+          console.log("add button click");
+
+          arr.push = parseInt(document.querySelector("#a1").value);
+          console.log(arr, "element is added in array");
+          document.querySelector("#s1").innerHTML = "element added in array";
+        });
+
+        const edit = document.querySelector("#b2");
+        edit.addEventListener("click", () => {
+          console.log("Edit button clicked");
+          let x = window.prompt("Enter a new value");
+          console.log(x);
+        });
+
+        const remove = document.querySelector("#b3");
+        remove.addEventListener("click", () => {
+          console.log("delete button clicked");
+          let i = 0;
+          //text=parseInt(text);
+          console.log(text.value);
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == text.value) {
+              arr.splice(i, 1);
+            }
+          }
+          console.log(arr);
+
+          document.querySelector("#s1").innerHTML =
+            "element removed from array";
+        });
+
+        const see = document.querySelector("#b4");
+        see.addEventListener("click", () => {
+          console.log("Viewall button clicked");
+
+          document.querySelector("#s1").innerHTML = arr;
+        });
+
+        const odd = document.querySelector("#b5");
+        odd.addEventListener("click", () => {
+          console.log("showoddd position button clicked");
+          let z = "";
+          for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+              console.log("even place");
+            } else {
+              z = z + " " + arr[i];
+            }
+          }
+          document.querySelector("#s1").innerHTML = " " + z;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Emp no.   <input type="text" id="t1" placeholder="Enter number" />
+    <br><br>
+    Emp name  <input type="text" id="t2" placeholder="Enter number" />
+    <br><br>
+    Email id  <input type="text" id="t3" placeholder="Enter number" />
+    <br><br>
+    Dept. id  <input type="text" id="t4" placeholder="Enter number" />
+    <br><br>
+   
+    <button id="b1">  Add  </button>
+    <button id="b2">  Modify  </button>
+    <button id="b3">  Remove  </button>
+    <button id="b4">  Viewall  </button>
+    <button id="b5">  view on dept id  </button>
+  </body>
+</html>

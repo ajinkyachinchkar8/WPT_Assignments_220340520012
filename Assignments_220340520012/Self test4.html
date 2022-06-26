@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    window.addEventListener('DOMContentLoaded',()=>{
+      document.querySelector('#b1').addEventListener('click',()=>{
+           console.log("button clicked");
+
+        let x = document.querySelector('#t1');
+        if(document.querySelector('#t1').value==="1234"){
+        console.log("textbox1 entered")
+        document.querySelector('#t2').value="Pune";
+        }
+      });
+
+    });
+
+</script>
+</head>
+<body>
+  Pincode  <input type="text" id="t1">
+  <br><br>
+  Area     <input type="text" id="t2">
+  <br><br>
+  <button id="b1">Get area info</button>
+    
+</body>
+</html>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .r {color: rgb(240, 36, 36);}
+        .u {text-decoration: underline;}
+    </style>
+
+    <script>
+
+      window.addEventListener('DOMContentLoaded',()=>{
+     
+      document.querySelector('#b1').addEventListener('click',()=>{
+      console.log("apply button");
+      
+      let x = document.querySelector('#p1');
+      if(document.querySelector('#c1').checked === true && document.querySelector('#c2').checked === true ){
+       console.log("red and underline");
+        x.classList.add('r');
+        x.classList.add('u');
+      }
+      else if (document.querySelector('#c1').checked===true) {
+        console.log("red");
+        x.classList.add('r');
+        x.classList.remove('u');
+      }
+      else if (document.querySelector('#c2').checked===true) {
+        console.log("underline")
+        x.classList.remove('r');
+        x.classList.add('u');
+      }
+       else {
+        console.log("")
+        x.classList.remove('r');
+        x.classList.remove('u');
+      }
+
+
+      });
+});
+
+    </script>
+    
+</head>
+<body>
+    <p id="p1">Hello</p>
+    <input type="checkbox" id="c1" name="chkbx"><span>Make it red</span>
+    <input type="checkbox" id="c2" name="chkbx"><span>Make it underline</span>
+    <br><br>
+    <button id="b1">Apply</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html>
+    <head>
+        <script>
+         window.addEventListener('DOMContentloaded',()=>{
+        document.
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+         const x=document.querySelector('#c1');
+         const btn1 =Document.querySelector('#b1')
+         btn1.addEventListener('click',()=>{
+           console.log("button clicked");
+           document.querySelector('#p1').checkedbtn1.classList.add('r');
+         });
+         x.addEventListener('check',()=>{
+         console.log("checkbox1 done");
+         });
+
+         const y=document.querySelector('#c2');
+         const btn2 =Document.querySelector('#b1')
+         btn2.addEventListener('click',()=>{
+           console.log("button clicked");
+           document.querySelector('#p1').innerHTML= btn2.classList.add('u');
+         });
+         y.addEventListener('check',()=>{
+         console.log("checkbox2 done")
+});
+*/
+
+        </script>
+
+        <style>  
+        .r {color: rgb(240, 36, 36);}
+        .u {text-decoration: underline;}
+        </style>
+
+    </head>
+    <body>
+        <p id="p1">Hello</p>
+        <input type="checkbox" id="c1"><span id="red">Make it red</span>
+        <input type="checkbox" id="c2"><span id="underline">Make it underline</span>
+        <br><br>
+        <button id="b1">Apply</button>
+    </body>
+</html> -->

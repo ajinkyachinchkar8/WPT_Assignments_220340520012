@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const addbtn = document.querySelector("#r1");
+      addbtn.addEventListener("click", () => {
+        console.log("radio button 1 clicked");
+        const text = document.querySelector("#t1");
+        document.querySelector("#m1").innerHTML = text.value * 5;
+      });
+
+      const addbtn2 = document.querySelector("#r2");
+      addbtn2.addEventListener("click", () => {
+        console.log("radio button 2 clicked");
+        const text = document.querySelector("#t1");
+        document.querySelector("#m1").innerHTML = text.value * 7;
+      });
+
+    });
+  </script>
+  <body>
+    <input type="text" placeholder="enter here" id="t1"/> <span id="m1"> Message </span>
+    <br /><br />
+    <input type="radio" id="r1" />Multiply by 5
+    <input type="radio" id="r2" />Multiply by 7
+  </body>
+</html>
